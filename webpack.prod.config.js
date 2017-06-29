@@ -15,7 +15,6 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.IgnorePlugin(/\/iconv-loader$/),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,

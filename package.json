@@ -7,6 +7,7 @@
   "author": "Leonardo Couto",
   "license": "MIT",
   "scripts": {
+    "watch": "cross-env NODE_ENV=development webpack --config ./webpack.dev.config.js --watch --progress --colors",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
     "start": "node app.js"
   },
@@ -22,14 +23,18 @@
     "javascript"
   ],
   "dependencies": {
+    "es6-promise": "^4.1.1",
     "express": "^4.13.4",
+    "google-maps-react": "^1.0.19",
     "http": "0.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.4",
-    "node-fetch": "^1.7.1",
     "react": "^0.14.8",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^0.14.8",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.9"
   },
   "devDependencies": {
     "babel": "^6.5.2",

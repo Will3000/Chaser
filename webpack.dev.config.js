@@ -16,9 +16,13 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.IgnorePlugin(/\/iconv-loader$/),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    })
   ],
 
   module: {
@@ -36,8 +40,13 @@ module.exports = {
         loader: 'file'},
       {
         test: /\.json$/,
-        loader: 'json-loader'
-      }
+        loader: 'json-loader'},
+      { 
+        test: /\.css$/, 
+        loader: "style-loader!css-loader" 
+      },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000' }
     ]
   }
 }

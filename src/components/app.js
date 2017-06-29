@@ -12,7 +12,10 @@ import InputGroup from 'react-bootstrap/lib/InputGroup';
 import FormControl from 'react-bootstrap/lib/FormControl';
 import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import GoogleApiComponent from './container.js';
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+import fetch from 'isomorphic-fetch'
+import promise from 'es6-promise/auto'
+// promise.polyFill()
 // import keys from '../../keys.js';
 
 const navList = [
@@ -23,7 +26,7 @@ const navList = [
 class MyNavBar extends React.Component {
   render() {
     return(
-      <Navbar  style={{marginBottom:'0px'}}>
+      <Navbar style={{marginBottom:'0px'}}>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#">Chaser</a>
@@ -100,36 +103,6 @@ class SearchBar extends React.Component {
   }
 }
 
-const testArr = [
-    {
-        "VehicleNo": "12013",
-        "TripId": 8879472,
-        "RouteNo": "049",
-        "Direction": "WEST",
-        "Destination": "UBC",
-        "Pattern": "WB1DT",
-        "Latitude": 49.2265,
-        "Longitude": -123.127233,
-        "RecordedTime": "10:02:25 pm",
-        "RouteMap": {
-            "Href": "http://nb.translink.ca/geodata/049.kmz"
-        }
-    },
-    {
-        "VehicleNo": "12016",
-        "TripId": 8879473,
-        "RouteNo": "049",
-        "Direction": "WEST",
-        "Destination": "UBC",
-        "Pattern": "WB1DT",
-        "Latitude": 49.2259,
-        "Longitude": -123.002833,
-        "RecordedTime": "09:56:43 pm",
-        "RouteMap": {
-            "Href": "http://nb.translink.ca/geodata/049.kmz"
-        }
-    }
-]
 export default class App extends React.Component {
   constructor(props){
     super(props);
